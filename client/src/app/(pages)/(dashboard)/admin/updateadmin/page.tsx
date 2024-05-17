@@ -125,31 +125,18 @@ export default function Signin () {
           >
             <Stack gap={4} sx={{ mb: 2 }}>
               <Stack gap={1}>
-                <div className=' text-[40px]  align w-full  text-center pb-10 font-bold' style={{ color: 'white' }}>
-                Sign Up
+                <div className=' text-[40px]  align w-full  text-center pb-10 font-bold' style={{ color: 'white'  }}>
+               Add New Admin
                 </div>
 
-                <Typography level="body-sm">
-                 Already have a account ?{' '}
-                  <Link href="/signin" level="title-sm">
-                    Sign In!
-                  </Link>
-                </Typography>
+              
               </Stack>
-              <Button
-                variant="soft"
-                color="neutral"
-                fullWidth
-                sx={{ bgcolor: 'rgb(66, 133, 244)' }}
-                onClick={() => signIn('google')}
-              >
-                Continue with Google
-              </Button>
+           
             </Stack>
             <Divider
             
             >
-              or
+           
             </Divider>
             <Stack gap={4} sx={{ mt: 2 }}>
               <form onSubmit={handleSubmit}
@@ -183,7 +170,12 @@ export default function Signin () {
                   <FormLabel style={{ color: 'white' }}>Email</FormLabel>
                   <Input type="email" name="email" onChange={(e)=>setEmail(e.target.value)} />
                 </FormControl>
-      
+
+                <FormControl required>
+                  <FormLabel style={{ color: 'white' }}>Admin Type</FormLabel>
+                  <Input type="password" name="password" onChange={(e)=>setPassword(e.target.value)}/>
+                </FormControl>
+                
                 <FormControl required>
                   <FormLabel style={{ color: 'white' }}>Password</FormLabel>
                   <Input type="password" name="password" onChange={(e)=>setPassword(e.target.value)}/>
@@ -215,7 +207,7 @@ export default function Signin () {
                     </Link>
                   </Box>
                   <Button type="submit" fullWidth>
-                    Sign Up
+                  Update Admin
                   </Button>
                 </Stack>
                 

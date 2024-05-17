@@ -16,11 +16,11 @@ import Typography from '@mui/joy/Typography';
 import Stack from '@mui/joy/Stack';
 
 import { signIn } from 'next-auth/react';
+import { redirect } from 'next/dist/server/api-utils';
 export default function Signin () {
 
   const [username, SetUsername] = React.useState('');
   const [password, SetPassword] = React.useState('');  
-  const [dtp, SetDtp] = React.useState('');                                                                                 
   const [error, setError] = React.useState('');
 
   const haddlesubmitq =async (e:any) =>
@@ -28,20 +28,18 @@ export default function Signin () {
        e.preventDefault();
 
       try {
-        const response= await fetch('http://localhost:5000/authsignin',{
+        const response= await fetch('http://localhost:5000/authadminlog',{
           method:'POST',
           headers:{'Content-Type':'application/json'},
-          body:JSON.stringify({ username, password, dtp})
+          body:JSON.stringify({ username, password})
 
         });
         if (response.ok) {
           console.log('Response: logeed');
-          const form = e.target;
-          form.reset();
-          window.location.href = 'http://localhost:3000/user/overview';
-          setError('');
-  
-        } else {
+          window.location.href = 'http://localhost:3000/admin/overview';
+        } 
+        
+        else {
           const result = await response.json();
         setError(result.message || 'Sign in failed for an unknown reason')
         }
@@ -121,26 +119,12 @@ export default function Signin () {
             <Stack gap={4} sx={{ mb: 2 }}>
               <Stack gap={1}>
                 <div  style={{ color: 'white'  }}>
-                Sign in
+                Admin Login
                 </div>
 
-                <Typography level="body-sm">
-                  New to company?{' '}
-                  <Link href="/signup" level="title-sm">
-                    Sign up!
-                  </Link>
-                </Typography>
+               
               </Stack>
-              <Button
-                variant="soft"
-                color="neutral"
-                fullWidth
-                sx={{ bgcolor: 'rgb(66, 133, 244)' }}
-                onClick={() => signIn('google')}
-        
-              >
-                Continue with Google
-              </Button>
+             
             </Stack>
             <Divider
           
@@ -157,10 +141,7 @@ export default function Signin () {
                   <Input type="text" name="username" onChange={(e)=>SetUsername(e.target.value)}/>
                 </FormControl>
 
-                <FormControl required >
-                  <FormLabel style={{ color: 'white' }}>DTP Code</FormLabel>
-                  <Input type="text" name="Dtp" onChange={(e)=>SetDtp(e.target.value)}/>
-                </FormControl>
+               
 
                 <FormControl required>
                   <FormLabel style={{ color: 'white' }}>Password</FormLabel>

@@ -130,7 +130,13 @@ const MiniDrawer = (props: MiniDrawerProps) => {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" noWrap component="div">
-            Recruitwise
+          TechTravel
+          </Typography>
+          <Typography sx={{
+              marginRight: 5,pl:170,
+              ...(open && { display: 'none' }),
+            }}>
+            <Link href="/">Logout</Link>
           </Typography>
         </Toolbar>
       </AppBar>
@@ -142,8 +148,8 @@ const MiniDrawer = (props: MiniDrawerProps) => {
         </DrawerHeader>
         <Divider />
         <List>
-          {['Hiring', 'Manage', 'discussions', 'Settings'].map((text, index) => (
-            <Link href={`/employer/${text.toLowerCase()}`} key={text}>
+          {['PointSystem', 'Parking', 'JourneyHistory', 'PublicTransport'].map((text, index) => (
+            <Link href={`/user/${text.toLowerCase()}`} key={text}>
             <ListItem key={text} disablePadding sx={{ display: 'block' }}>
               <ListItemButton
                 sx={{

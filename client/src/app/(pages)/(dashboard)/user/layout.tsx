@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import Drawer from "@/components/layouts/drawer-employer"
+import Drawer from "@/components/layouts/drawer-user"
 
 const inter = Inter({ subsets: ["latin"] });
 

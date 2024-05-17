@@ -1,98 +1,88 @@
-# Duothan 4.0
+# TechTravel Transport Management System
 
-Neotropolis, a cutting-edge futuristic city, is facing challenges in managing its transport system efficiently. With the city's rapid growth and technological advancements, traditional transport systems are proving inadequate. As a result, the city is witnessing traffic congestion, parking issues, and inefficient public transport.
+This project is designed to address the transport challenges in TechTravel by providing a state-of-the-art transport management system. 
+The system consists of a Next.js frontend and an Express server-side application, both managed with Yarn.
 
-To address these challenges, Neotropolis aims to implement a Smart Transport Management System (STMS) that integrates various transport modes, optimizes traffic flow, and provides seamless connectivity for residents and visitors.
+## Table of Contents
 
-## Problem Statement
+- [Prerequisites](#prerequisites)
+- [Installation](#installation)
+- [Running the Client (Next.js)](#running-the-client-nextjs)
+- [Running the Server (Express)](#running-the-server-express)
+- [Project Structure](#project-structure)
+- [Contributing](#contributing)
+- [License](#license)
 
-When someone arrives in Neotropolis, they should park their vehicle at the "Collective Neotropolis Parkinglot". The system will issue a digital ticket through a web interface, which will serve as a comprehensive transport pass. This digital ticket should control everything related to transport, including public transport access, payments, tracking, and more. However, building such a system requires addressing several key functionalities:
+## Prerequisites
 
-1. Digital Transport Pass:
-   - Issue digital tickets to users upon parking.
-   - Integrate with public transport systems for seamless access.
-   - Enable cashless payments for parking and public transport.
-2. Real-time Transport Tracking:
-   - Track the location of public transport vehicles in real-time.
-   - Provide users with accurate arrival times and route information.
-3. Integrated Payment System:
-   - Allow users to top-up their transport passes.
-   - Enable contactless payments for all transport services.
-4. Traffic Optimization and Management:
-   - Analyze traffic patterns to optimize signal timings.
-   - Provide alternative routes during congestion to reduce travel time.
-5. User-Friendly Web Interface:
-   - Enable users to easily manage their transport pass.
-   - Futuristic User Interface
-   - Provide a comprehensive dashboard displaying transport options, payments, and journey history.
+Before you begin, ensure you have met the following requirements:
 
-## Solution
+- Node.js (version 14.x or later)
+- Yarn (version 1.22.x or later)
 
-Contestants are tasked with developing a web-based Smart Transport Management System for
-Neotropolis. The system should have the following features:
+## Installation
 
-- Digital Transport Pass (DTP) System: Issue digital tickets to users upon parking, which serve as a comprehensive transport pass for Neotropolis.
-- Real-time Transport Tracking: Provide users with real-time tracking of public transport vehicles and accurate arrival times.
-- Integrated Payment System: Allow users to manage and top-up their transport passes, and make contactless payments for all transport services.
-- Traffic Optimization and Management: Implement algorithms to analyze traffic patterns, optimize signal timings, and provide alternative routes during congestion.
-- User-Friendly Web Interface: Develop an intuitive web interface where users can easily manage their transport pass, view options, make payments, and track their journey history.
+1. **Clone the repository:**
 
-## Technical Requirements
+    ```bash
+    git clone https://github.com/yourusername/techtravel-transport-system.git
+    cd techtravel-transport-system
+    ```
 
-- Build the application using any modern web framework.
-- Use an efficient database to store information about users, vehicles, parking spaces, public transport, and payments.
-- Implement RESTful APIs to facilitate communication between the frontend and backend.
-  Note: You can use an API Manager Platform (Postman/insomnia) when demonstrating APIs.
+2. **Install dependencies for both client and server:**
 
-- All the Major entities (such as Users, TransportPass, etc.…) should have full CRUD (Create, Read, Update Delete) operations and both API and your solutions should be able to demonstrate it.
+    ```bash
+    cd client
+    yarn install
+    cd ../server
+    yarn install
+    ```
 
-- Ensure the application is scalable to handle a large number of users and data.
+## Running the Client (Next.js)
 
-- All Endpoints must use proper HTTP Status codes to indicate the status of the request.
-- For any internal Users, use of General Auth Providers is not recommended.
-  For example, using Google Auth or Firebase Auth is not recommended for Internal Users such as Admins or Pharmacies.
+1. **Navigate to the client directory:**
 
-- Implement security measures to protect user data and prevent unauthorized access.
+    ```bash
+    cd client
+    ```
 
-## Point Scheme
+2. **Start the Next.js development server:**
 
-| Feature                                           | Score |
-| ------------------------------------------------- | ----- |
-| Database                                          | 135   |
-| DTP (Digital Transport Pass)                      | 180   |
-| Real-time Tracking                                | 70    |
-| Interface                                         | 205   |
-| UI                                                | 30    |
-| Video Submission                                  | 100   |
-| Final Submission                                  | 60    |
-| Teamplay                                          | 68    |
-| Admin Dashboard                                   | 152   |
+    ```bash
+    yarn dev
+    ```
 
-## Tasks Breakdown
+3. **Open your browser and visit:**
 
-- Task 01: Backend Development and Database
+    ```
+    http://localhost:3000
+    ```
 
-  - Develop backend logic for issuing digital tickets, managing transport data, and handling payments.
-  - Implement an efficient database to store all necessary information.
+## Running the Server (Express)
 
-- Task 02: Real-time Transport Tracking and Optimization (API Expected)
+1. **Navigate to the server directory:**
 
-  - Implement real-time tracking of public transport vehicles.
-  - Develop algorithms for traffic optimization and alternative route suggestions.
+    ```bash
+    cd server
+    ```
 
-- Task 03: Integrated Payment System
+2. **Start the Express server:**
 
-  - Implement payment processing for topping up transport passes and making payments for parking and public transport.
+    ```bash
+    yarn start
+    ```
 
-- Task 04: User-Friendly Web Interface
+3. **The server will run on port 5000. You can test the endpoints using a tool like Postman or through your client application.**
 
-  - Design and develop an intuitive web interface for users to manage their transport pass, view transport options, and make payments.
-  - High-Tech Futuristic User Interface (Additional Points)
+    ```
+    http://localhost:4000
+    ```
 
-- Task 05: Teamwork and Collaboration
+## Find the UI in :
+```
+https://www.figma.com/design/oBTyc9CmtrVPF5NzTDyVI1/Untitled?node-id=0%3A1&t=7BQikXu6t2lmjB9F-1
+```
 
-  - Collaborate effectively as a team to ensure seamless integration of all components and deliver a functional Smart Transport Management System for Neotropolis.
 
-## Additional Resources
+Here's a brief overview of the project's structure:
 
-- Wireframe: https://www.figma.com/design/8hmvmPLRZViPUbKujWTpVp/Duothan-4.0-Wireframe?node-id=0%3A1&t=W9hnqfbdksw0KYU0-1
